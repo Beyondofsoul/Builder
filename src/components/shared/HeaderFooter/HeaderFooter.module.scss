@@ -1,0 +1,19 @@
+@import '../../../scss/libs/normalize';
+.header {
+  margin-top: 17px;
+  border: 1px solid #e8e9ea;
+}
+.nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &__list {
+    display: flex;
+    column-gap: 30px;
+  }
+  &__link {
+    color: #454950;
+    &:hover {
+      color: #171b24;
+    }
+  }
+}

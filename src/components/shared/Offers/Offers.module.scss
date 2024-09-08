@@ -1,0 +1,39 @@
+.container {
+  margin: 0 auto;
+}
+.Instruments {
+  background-image: url('../../../assets/Specials.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 1360px;
+  margin: 40px;
+  &__slide {
+    margin-left: 100px;
+  }
+  &__title {
+    padding-top: 40px;
+  }
+  &__description {
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 12px 20.5px;
+    cursor: pointer;
+    border: none;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    background-color: #fcec41;
+    &:hover {
+      background: #2f323a;
+      color: #ffffff;
+      transition: 0.4s;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import '../../../scss/libs/normalize';
+.header__top {
+  background-color: #f8f8f8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+  .nav__geo {
+    column-gap: 8px;
+    display: flex;
+  }
+  .geo__title {
+    color: #5d6066;
+    cursor: pointer;
+    &:hover {
+      color: #2f323a;
+    }
+  }
+  .nav__top {
+    display: flex;
+    justify-content: space-between;
+
+    &_list {
+      display: flex;
+      column-gap: 24px;
+    }
+    &_link {
+      color: #5d6066;
+      &:hover {
+        color: #2f323a;
+      }
+    }
+  }
+}
+.header {
+  &__btn {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 12px 20.5px;
+    cursor: pointer;
+    border: none;
+    margin-left: 114px;
+    background-color: #fcec41;
+    &:hover {
+      background: #2f323a;
+      color: #ffffff;
+      transition: 0.4s;
+    }
+    &:active {
+      color: #d1d1d3;
+    }
+  }
+  &__search_block {
+    background-color: #f6f6f6;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d1d1d3;
+    margin-left: 16px;
+    padding-right: 12px;
+  }
+  &__icon {
+    cursor: pointer;
+  }
+  &__search {
+    display: flex;
+
+    margin-left: 16px;
+  }
+  &__input {
+    width: 365px;
+    border: none;
+    background-color: #f6f6f6;
+    font-size: 18px;
+    font-weight: 500;
+    color: #8b8d92;
+    opacity: 0.7;
+  }
+  .nav__main {
+    display: flex;
+    font-size: 15px;
+    &_list {
+      display: flex;
+    }
+    &_profile {
+      margin-left: 16px;
+    }
+    &_svg {
+      position: relative;
+      left: 27px;
+    }
+    &_user {
+      position: relative;
+      left: 6px;
+      color: #5d6066;
+      &:hover {
+        color: #2f323a;
+      }
+    }
+    &_order {
+      margin-left: 20px;
+      color: #5d6066;
+      &:hover {
+        color: #2f323a;
+      }
+    }
+    &_box {
+      position: relative;
+      left: 32px;
+      &:hover {
+        color: #2f323a;
+      }
+    }
+    &_cart {
+      margin-left: 10px;
+      color: #5d6066;
+      &:hover {
+        color: #2f323a;
+      }
+    }
+  }
+}
