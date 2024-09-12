@@ -1,0 +1,42 @@
+@import '../../../scss/libs/normalize';
+
+.brands {
+  &__header {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__btn {
+    display: flex;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 12px 12px 12px 24px;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #d1d1d3;
+    background-color: #ffffff;
+    margin-bottom: 16px;
+    &:hover {
+      background: #2f323a;
+      color: #ffffff;
+      transition: 0.4s;
+    }
+  }
+  &__blocks {
+    display: flex;
+    column-gap: 13px;
+    flex-wrap: wrap;
+  }
+  &__block {
+    margin-top: 10px;
+  }
+  &__img {
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid #5d6066;
+      transition: 0.4s;
+    }
+  }
+}

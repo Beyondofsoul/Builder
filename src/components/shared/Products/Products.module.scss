@@ -1,0 +1,50 @@
+@import '../../../scss/libs/normalize';
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 13px;
+  &__title {
+    margin-top: 80px;
+    font-weight: 600;
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  &__block {
+    border: 1px solid #e8e9ea;
+    max-width: 280px;
+    margin-bottom: 16px;
+  }
+  &__text {
+    border-top: 1px solid #e8e9ea;
+    padding-top: 16px;
+    padding-left: 16px;
+    margin-bottom: 40px;
+  }
+  &__price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 16px;
+  }
+  &__btn {
+    margin: 16px;
+
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 18px;
+
+    cursor: pointer;
+    border: none;
+    margin-top: 16px;
+    padding: 12px 80px;
+
+    background-color: #fcec41;
+    &:hover {
+      background: #2f323a;
+      color: #ffffff;
+      transition: 0.4s;
+    }
+  }
+}

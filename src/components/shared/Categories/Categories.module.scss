@@ -1,0 +1,57 @@
+@import '../../../scss/libs/normalize';
+.categories {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #2f323a;
+    margin-bottom: 18px;
+  }
+  &__btn {
+    display: flex;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 12px 12px 12px 24px;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #d1d1d3;
+    background-color: #ffffff;
+    margin-bottom: 16px;
+    &:hover {
+      background: #2f323a;
+      color: #ffffff;
+      transition: 0.4s;
+    }
+  }
+  &__blocks {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+  }
+  &__block {
+    max-width: 180px;
+    background: #f6f6f6;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    color: #2f323a;
+    &:hover {
+      color: #2f323a;
+      background-color: #fcec41;
+      transition: 0.4s;
+    }
+    &_title {
+      font-weight: 500;
+      font-size: 18px;
+      padding-top: 12px;
+      padding-bottom: 16px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

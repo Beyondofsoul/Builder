@@ -1,0 +1,24 @@
+@import '../../../scss/libs/normalize';
+
+.about {
+  background-image: url(../../../assets/about.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 40px;
+  &__title {
+    padding-top: 88px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 34px;
+    color: #2f323a;
+  }
+  &__text {
+    max-width: 670px;
+  }
+  &__text_footer {
+    max-width: 670px;
+    padding-bottom: 88px;
+    padding-top: 25px;
+  }
+}

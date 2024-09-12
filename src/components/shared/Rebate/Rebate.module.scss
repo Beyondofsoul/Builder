@@ -1,0 +1,101 @@
+@import '../../../scss/libs/normalize';
+
+.rebate {
+  margin-bottom: 80px;
+  &__title {
+    font-size: 34px;
+    font-weight: 600;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    &_blocks {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 16px;
+    }
+    &_block {
+      margin-bottom: 16px;
+      width: 572px;
+
+      display: flex;
+      border: 1px solid #e8e9ea;
+    }
+  }
+
+  &__action {
+    position: absolute;
+    margin-left: 16px;
+    margin-top: 16px;
+    border: 2px solid #fbe303;
+    padding: 4px 8px;
+    background: #ffffff;
+  }
+
+  &__price {
+    padding-top: 40px;
+
+    display: flex;
+    column-gap: 8px;
+    &_present {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &_past {
+      color: #8b8d92;
+      display: flex;
+      text-decoration: line-through;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  &__info_btn {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    max-width: 262px;
+    cursor: pointer;
+    border: none;
+    margin-top: 16px;
+    padding: 12px 88px;
+    background-color: #fcec41;
+    &:hover {
+      background: #2f323a;
+      color: #ffffff;
+      transition: 0.4s;
+    }
+  }
+  &__info {
+    padding-top: 16px;
+    border-left: 1px solid #e8e9ea;
+    padding-left: 16px;
+    &_title {
+      max-width: 262px;
+    }
+  }
+  &__btn {
+    display: flex;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 12px 12px 12px 24px;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #d1d1d3;
+    margin-top: 100px;
+    background-color: #ffffff;
+    margin-bottom: 16px;
+    &:hover {
+      background: #2f323a;
+      color: #ffffff;
+      transition: 0.4s;
+    }
+  }
+}

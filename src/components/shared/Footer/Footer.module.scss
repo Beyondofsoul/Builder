@@ -1,0 +1,63 @@
+@import '../../../scss/libs/normalize';
+nav {
+  display: flex;
+  column-gap: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #e8e9ea;
+}
+
+.footer {
+  background: #2f323a;
+  padding-top: 40px;
+  &__email {
+    display: flex;
+    column-gap: 8px;
+    margin-top: 22px;
+  }
+  &__location {
+    margin-top: 16px;
+    display: flex;
+    column-gap: 8px;
+  }
+  &__info {
+    margin-right: 162px;
+    color: #e8e9ea;
+  }
+  &__about {
+    display: flex;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #5d6066;
+  }
+  &__footer {
+    display: flex;
+    padding-top: 17px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    color: #d1d1d3;
+  }
+}
+.nav {
+  width: 245px;
+  &__profile {
+    &_item {
+      padding-top: 12px;
+    }
+  }
+  &__catalog {
+    &_item {
+      padding-top: 12px;
+    }
+  }
+  &__documentation {
+    &_item {
+      padding-top: 12px;
+    }
+  }
+}
