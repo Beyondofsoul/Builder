@@ -1,15 +1,12 @@
-.container {
-  margin: 0 auto;
-}
+@import '../../../scss/libs/normalize';
 .Instruments {
   position: relative;
   background-image: url('../../../assets/Specials.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 1360px;
-  margin-top: 40px;
-
+  margin: 40px;
+  max-height: 420px;
   &__slide {
     margin-left: 100px;
   }
@@ -19,12 +16,21 @@
   &__description {
     padding-top: 20px;
     font-size: 20px;
+    font-weight: 400;
   }
-
+  &__second {
+    position: relative;
+    background-image: url('../../../assets/Specials2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 40px;
+    max-height: 420px;
+  }
   &__buttons {
     display: flex;
     align-items: baseline;
-
+    justify-content: space-between;
     stroke: #454950;
   }
   &__arrow {
@@ -46,7 +52,7 @@
     padding: 12px 20.5px;
     cursor: pointer;
     border: none;
-    margin-top: 100px;
+    margin-top: 72px;
     background-color: #fcec41;
     &:hover {
       background: #2f323a;
@@ -57,8 +63,7 @@
 }
 .buttons__arrows {
   display: flex;
-  position: relative;
-  left: 909px;
+
   column-gap: 12px;
   padding-bottom: 40px;
 }

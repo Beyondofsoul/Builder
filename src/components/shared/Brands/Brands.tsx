@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Brands.module.scss';
-import BrandPng from '../../../assets/brand.png';
+
+import { BrandsBlock } from '../../ui/BrandsBlock';
+import axios from 'axios';
+
+const src = 'https://66ed39ba380821644cdc08c3.mockapi.io/brands';
 
 export const Brands: React.FC = () => {
+  const [brands, setBrands] = useState([]);
+
+  useEffect(() => {
+    async function getProducts() {
+      const response = await axios.get(src);
+      await setBrands(response.data);
+    }
+    getProducts();
+  }, []);
+
   return (
     <div>
       <div className={styles.container}>
@@ -17,51 +31,18 @@ export const Brands: React.FC = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-arrow-right">
               <path d="m12 5 7 7-7 7" />
             </svg>
           </button>
         </div>
         <div className={styles.brands__blocks}>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
-          <div className={styles.brands__block}>
-            <img src={BrandPng} alt="" className={styles.brands__img} />
-          </div>
+          {brands.map((obj: any) => (
+            <BrandsBlock key={obj.id} {...obj} />
+          ))}
         </div>
       </div>
     </div>

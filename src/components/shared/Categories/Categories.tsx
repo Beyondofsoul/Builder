@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Categories.module.scss';
 
-import DushPng from '../../../assets/Dush.png';
+import { CategoriesBlock } from '../../ui/CategoriesBlock';
 export const Categories: React.FC = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://66e33761494df9a478e4a5ff.mockapi.io/categories`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((arr) => {
+        setCategories(arr);
+      });
+  }, []);
+
   return (
     <div>
       <div className={styles.container}>
@@ -17,63 +29,18 @@ export const Categories: React.FC = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-arrow-right">
               <path d="m12 5 7 7-7 7" />
             </svg>
           </button>
         </div>
         <div className={styles.categories__blocks}>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
-          <div className={styles.categories__block}>
-            <p className={styles.categories__block_title}>Душевые</p>
-            <img src={DushPng} alt="" />
-          </div>
+          {categories.map((obj: any) => (
+            <CategoriesBlock key={obj.id} {...obj} />
+          ))}
         </div>
       </div>
     </div>

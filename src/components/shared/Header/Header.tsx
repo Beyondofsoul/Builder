@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import { Box, MapPin, Search, ShoppingCart, User } from 'lucide-react';
 import LogoPng from '../../../assets/Logo.svg';
 
 import { HeaderFooter } from '../HeaderFooter/HeaderFooter';
+import { Modal } from '../../ui/Modal/Modal';
+import { Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
+  const [modal, setModal] = useState(0);
   return (
     <>
       <header className={styles.header__top}>
         <div className={styles.container}>
           <div className={styles.nav__top}>
             <div className={styles.nav__geo}>
-              <MapPin />
-              <div className={styles.geo__title}>Москва</div>
+              <MapPin onClick={() => setModal(1)} />
+              <div className={styles.geo__title} onClick={() => setModal(1)}>
+                Москва
+              </div>
+              {modal == 1 ? <Modal /> : ''}
             </div>
             <nav>
               <ul className={styles.nav__top_list}>
@@ -47,6 +53,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </header>
+
       <div className={styles.header}>
         <div className={styles.container}>
           <div className={styles.nav__main}>
@@ -59,9 +66,9 @@ export const Header: React.FC = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round">
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round">
                 <line x1="21" x2="3" y1="6" y2="6" />
                 <line x1="15" x2="3" y1="12" y2="12" />
                 <line x1="17" x2="3" y1="18" y2="18" />
@@ -90,9 +97,9 @@ export const Header: React.FC = () => {
               </li>
               <li className={styles.nav__main_cart}>
                 <ShoppingCart className={styles.nav__main_svg} />
-                <a href="#" className={styles.nav__main_cart}>
+                <Link to="cart" className={styles.nav__main_cart}>
                   Корзина
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

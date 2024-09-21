@@ -6,7 +6,12 @@
     font-size: 34px;
     font-weight: 600;
   }
-
+  &__add {
+    display: flex;
+    margin-top: 16px;
+    max-height: 48px;
+    margin-bottom: 16px;
+  }
   &__actions {
     display: flex;
     justify-content: space-between;
@@ -17,14 +22,24 @@
       column-gap: 16px;
     }
     &_block {
+      position: relative;
       margin-bottom: 16px;
       width: 572px;
 
       display: flex;
       border: 1px solid #e8e9ea;
     }
+    &_image {
+      display: flex;
+      justify-content: center;
+      width: 278px;
+      height: 208px;
+    }
   }
-
+  &__counter {
+    padding: 12px 64px;
+    border: 1px solid #d1d1d3;
+  }
   &__action {
     position: absolute;
     margin-left: 16px;
@@ -33,7 +48,19 @@
     padding: 4px 8px;
     background: #ffffff;
   }
-
+  &__invoice {
+    background: #ffffff;
+    border: 1px solid #d1d1d3;
+    cursor: pointer;
+    padding: 12px;
+    padding-bottom: 16px;
+    &:hover {
+      background-color: #2f323a;
+      stroke: #ffffff;
+      fill: #ffffff;
+      transition: 0.3s;
+    }
+  }
   &__price {
     padding-top: 40px;
 
@@ -57,13 +84,15 @@
   &__info_btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     column-gap: 8px;
     font-weight: 500;
     font-size: 18px;
-    max-width: 262px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     cursor: pointer;
     border: none;
-    margin-top: 16px;
+
     padding: 12px 88px;
     background-color: #fcec41;
     &:hover {
@@ -78,6 +107,7 @@
     padding-left: 16px;
     &_title {
       max-width: 262px;
+      height: 72px;
     }
   }
   &__btn {
