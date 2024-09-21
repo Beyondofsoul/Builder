@@ -2,14 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styles from './Rewiews.module.scss';
 import { Slider } from '../../ui/Slider';
 import axios from 'axios';
-import { useSwiper } from 'swiper/react';
 
 const src = 'https://66abc9cdf009b9d5c7305643.mockapi.io/Rewiews';
 
 export const Rewiews: React.FC = () => {
   const [rewiews, setRewiews] = useState([]);
-
-  const swiper = useSwiper();
 
   useEffect(() => {
     async function getProducts() {
