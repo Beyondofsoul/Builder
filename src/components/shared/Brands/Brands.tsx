@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './Brands.module.scss';
 
 import { BrandsBlock } from '../../ui/BrandsBlock';
-import axios from 'axios';
 
-const src = 'https://66ed39ba380821644cdc08c3.mockapi.io/brands';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBrands } from '../../../redux/slices/BrandsSlice';
+import { AppDispatch } from '../../../redux/store';
 
 export const Brands: React.FC = () => {
-  const [brands, setBrands] = useState([]);
-
+  const dispatch: AppDispatch = useDispatch();
+  const items = useSelector((state: any) => state.brand.brand);
   useEffect(() => {
-    async function getProducts() {
-      const response = await axios.get(src);
-      await setBrands(response.data);
-    }
-    getProducts();
+    dispatch(fetchBrands());
   }, []);
 
   return (
@@ -40,7 +37,7 @@ export const Brands: React.FC = () => {
           </button>
         </div>
         <div className={styles.brands__blocks}>
-          {brands.map((obj: any) => (
+          {items.map((obj: any) => (
             <BrandsBlock key={obj.id} {...obj} />
           ))}
         </div>

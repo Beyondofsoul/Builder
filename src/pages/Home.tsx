@@ -1,5 +1,3 @@
-import React from 'react';
-import { Header } from '../components/shared/Header/Header';
 import { Offers } from '../components/shared/Offers/Offers';
 import { Rebate } from '../components/shared/Rebate/Rebate';
 import { Categories } from '../components/shared/Categories/Categories';
@@ -12,7 +10,6 @@ import { Footer } from '../components/shared/Footer/Footer';
 export const Home = () => {
   return (
     <div>
-      <Header />
       <Offers />
       <Rebate />
       <Categories />

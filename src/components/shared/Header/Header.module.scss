@@ -85,6 +85,16 @@
   .nav__main {
     display: flex;
     font-size: 15px;
+    &_count {
+      width: 24px;
+      height: 24px;
+      border-radius: 10px;
+      padding-left: 8px;
+      margin-left: 55px;
+      padding-top: 1px;
+      position: absolute;
+      background-color: #fcec41;
+    }
     &_list {
       display: flex;
     }

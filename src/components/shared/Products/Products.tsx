@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react';
 import styles from './Products.module.scss';
-import axios from 'axios';
-import { ProductsBlock } from '../../ui/ProductsBlock';
 
-const src = 'https://66ed39ba380821644cdc08c3.mockapi.io/Products?page=1&limit=8';
+import { ProductsBlock } from '../../ui/ProductsBlock';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../../redux/slices/ProductsSlice';
+import { AppDispatch } from '../../../redux/store';
+import { useEffect } from 'react';
 
 export const Products: React.FC = () => {
-  const [products, setProducts] = useState([]);
+  const dispatch: AppDispatch = useDispatch();
+  const products = useSelector((state: any) => state.product.items);
 
   useEffect(() => {
-    async function getProducts() {
-      const response = await axios.get(src);
-      await setProducts(response.data);
-    }
-    getProducts();
+    dispatch(fetchProducts());
   }, []);
 
   return (

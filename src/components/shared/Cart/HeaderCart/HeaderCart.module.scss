@@ -1,0 +1,19 @@
+@import '../../../../scss/libs/normalize';
+
+.cart {
+  &__header {
+    background-image: url('../../../../assets/CartHeader.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 40px;
+  }
+  &__direction {
+    padding-top: 40px;
+  }
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    padding-bottom: 90px;
+  }
+}

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import { Box, MapPin, Search, ShoppingCart, User } from 'lucide-react';
 import LogoPng from '../../../assets/Logo.svg';
@@ -6,20 +5,25 @@ import LogoPng from '../../../assets/Logo.svg';
 import { HeaderFooter } from '../HeaderFooter/HeaderFooter';
 import { Modal } from '../../ui/Modal/Modal';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { open } from '../../../redux/slices/HeaderSlice';
 
 export const Header: React.FC = () => {
-  const [modal, setModal] = useState(0);
+  const header = useSelector((state: any) => state.header.value);
+  const dispatch = useDispatch();
+  const { items } = useSelector((state: any) => state.cart);
+
   return (
     <>
       <header className={styles.header__top}>
         <div className={styles.container}>
           <div className={styles.nav__top}>
             <div className={styles.nav__geo}>
-              <MapPin onClick={() => setModal(1)} />
-              <div className={styles.geo__title} onClick={() => setModal(1)}>
+              <MapPin onClick={() => dispatch(open())} />
+              <div className={styles.geo__title} onClick={() => dispatch(open())}>
                 Москва
               </div>
-              {modal == 1 ? <Modal /> : ''}
+              {header == 1 ? <Modal /> : ''}
             </div>
             <nav>
               <ul className={styles.nav__top_list}>
@@ -57,7 +61,9 @@ export const Header: React.FC = () => {
       <div className={styles.header}>
         <div className={styles.container}>
           <div className={styles.nav__main}>
-            <img src={LogoPng} alt="Logo" />
+            <Link to="Builder">
+              <img src={LogoPng} alt="Logo" />
+            </Link>
             <button className={styles.header__btn}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +102,9 @@ export const Header: React.FC = () => {
                 </a>
               </li>
               <li className={styles.nav__main_cart}>
+                <div className={styles.nav__main_count}>{items.length}</div>
                 <ShoppingCart className={styles.nav__main_svg} />
+
                 <Link to="cart" className={styles.nav__main_cart}>
                   Корзина
                 </Link>

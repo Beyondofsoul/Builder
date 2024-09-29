@@ -2,7 +2,6 @@ import React from 'react';
 
 import styles from '../shared/Rewiews/Rewiews.module.scss';
 
-import 'react-awesome-slider/dist/styles.css';
 type SliderParams = {
   name: string;
   imageUrl: string;
@@ -10,7 +9,7 @@ type SliderParams = {
   date: string;
 };
 
-export const Slider: React.FC<SliderParams> = ({ name, imageUrl, text, date }) => {
+export const Sliders: React.FC<SliderParams> = ({ name, imageUrl, text, date }) => {
   return (
     <div>
       <div className={styles.rewiews__block}>

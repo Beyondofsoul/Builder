@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-
 import 'swiper/css/navigation';
 import styles from './Offers.module.scss';
 
 import 'swiper/css';
+import { swapNext, swapReverse } from '../../../redux/slices/OfferSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Offers: React.FC = () => {
-  const [swap, setSwap] = useState<number>(0);
+  const swap = useSelector((state: any) => state.offer.value);
+  const dispatch = useDispatch();
 
   if (swap == 0) {
     return (
@@ -26,7 +27,9 @@ export const Offers: React.FC = () => {
               <div className={styles.Instruments__buttons}>
                 <button className={styles.Instruments__btn}>Подробнее</button>
                 <div className={styles.buttons__arrows}>
-                  <button className={styles.Instruments__arrow} onClick={() => setSwap(0)}>
+                  <button
+                    className={styles.Instruments__arrow}
+                    onClick={() => dispatch(swapReverse())}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -40,7 +43,9 @@ export const Offers: React.FC = () => {
                       <path d="M19 12H5" />
                     </svg>
                   </button>
-                  <button className={styles.Instruments__arrow} onClick={() => setSwap(1)}>
+                  <button
+                    className={styles.Instruments__arrow}
+                    onClick={() => dispatch(swapNext())}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -81,7 +86,9 @@ export const Offers: React.FC = () => {
               <div className={styles.Instruments__buttons}>
                 <button className={styles.Instruments__btn}>Подробнее</button>
                 <div className={styles.buttons__arrows}>
-                  <button className={styles.Instruments__arrow} onClick={() => setSwap(0)}>
+                  <button
+                    className={styles.Instruments__arrow}
+                    onClick={() => dispatch(swapReverse())}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -95,7 +102,9 @@ export const Offers: React.FC = () => {
                       <path d="M19 12H5" />
                     </svg>
                   </button>
-                  <button className={styles.Instruments__arrow} onClick={() => setSwap(0)}>
+                  <button
+                    className={styles.Instruments__arrow}
+                    onClick={() => dispatch(swapNext())}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"

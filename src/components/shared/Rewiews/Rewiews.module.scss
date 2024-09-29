@@ -33,11 +33,7 @@
     font-size: 34px;
     padding-top: 80px;
   }
-  &__blocks {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 16px;
-  }
+
   &__block {
     height: 365px;
     max-width: 376px;

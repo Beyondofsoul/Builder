@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './Rebate.module.scss';
 
 import { RebateBlock } from '../../ui/RebateBlock';
+import { AppDispatch } from '../../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRebate } from '../../../redux/slices/RebateSlice';
 
 export const Rebate: React.FC = () => {
-  const [items, setItems] = useState([]);
+  const dispatch: AppDispatch = useDispatch();
+  const rebate = useSelector((state: any) => state.rebate.rebates);
 
   useEffect(() => {
-    fetch(`https://66e33761494df9a478e4a5ff.mockapi.io/actions`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((arr) => {
-        setItems(arr);
-      });
+    dispatch(fetchRebate());
   }, []);
 
   return (
@@ -39,7 +37,7 @@ export const Rebate: React.FC = () => {
           </button>
         </div>
         <div className={styles.rebate__actions_blocks}>
-          {items.map((obj: any) => (
+          {rebate.map((obj: any) => (
             <RebateBlock key={obj.id} {...obj} />
           ))}
         </div>

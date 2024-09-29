@@ -1,0 +1,108 @@
+@import '../../../../scss/libs/normalize';
+
+.main {
+  &__left {
+    float: left;
+    max-width: 280px;
+    &_header {
+      padding: 16px;
+      border: 1px solid #e8e9ea;
+
+      font-weight: 500;
+    }
+    &_title {
+      font-weight: 700;
+    }
+    &_border {
+      border: 1px solid #e8e9ea;
+      margin-bottom: 16px;
+    }
+    &_description {
+      margin-left: 16px;
+    }
+
+    &_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 8px;
+      font-weight: 500;
+      font-size: 18px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      border: none;
+      margin-left: 16px;
+      padding: 12px 52px;
+      background-color: #fcec41;
+      &:hover {
+        background: #2f323a;
+        color: #ffffff;
+        transition: 0.4s;
+      }
+    }
+
+    &_order {
+      display: flex;
+      font-size: 15px;
+      margin-top: 16px;
+    }
+    &_block {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__right {
+    margin-left: 294px;
+    border: 1px solid #e8e9ea;
+    &_block {
+      display: flex;
+    }
+    &_info {
+      max-width: 262px;
+    }
+    &_price {
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    &_title {
+      margin-top: 16px;
+      height: 72px;
+    }
+    &_delete {
+      display: flex;
+      align-items: end;
+    }
+    &_img {
+      border: 1px solid #e8e9ea;
+      margin-right: 16px;
+      display: flex;
+      justify-content: center;
+      width: 278px;
+      height: 208px;
+    }
+    &_remove {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 8px;
+      font-weight: 500;
+      font-size: 18px;
+
+      margin-bottom: 17px;
+      cursor: pointer;
+      border: 1px solid #d1d1d3;
+      margin-left: 16px;
+      background-color: #ffffff;
+      padding: 11px 68px;
+
+      &:hover {
+        background: #2f323a;
+        color: #ffffff;
+        transition: 0.4s;
+      }
+    }
+  }
+}
