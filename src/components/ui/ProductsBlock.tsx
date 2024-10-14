@@ -30,7 +30,7 @@ export const ProductsBlock: React.FC<ProductsParams> = ({ id, imageUrl, title, p
         <img src={imageUrl} alt="img" />
         <p className={styles.products__text}>{title}</p>
         <div className={styles.products__price}>{price} ₽</div>
-        <button className={styles.rebate__info_btn} onClick={onClickAdd}>
+        <button className={styles.products_btn} onClick={onClickAdd}>
           В корзину
         </button>
       </div>

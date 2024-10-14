@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../shared/Rebate/Rebate.module.scss';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
-import { addItem } from '../../redux/slices/CartSlice';
+import { addItem, updateTotalPrice } from '../../redux/slices/CartSlice';
 
 type RebateBlockParams = {
   id: string;
@@ -11,9 +11,17 @@ type RebateBlockParams = {
   imageUrl: string;
   offer: number;
   swap: string;
+  count: number;
 };
 
-export const RebateBlock: React.FC<RebateBlockParams> = ({ id, imageUrl, title, price, offer }) => {
+export const RebateBlock: React.FC<RebateBlockParams> = ({
+  id,
+  imageUrl,
+  title,
+  price,
+  offer,
+  count,
+}) => {
   const dispatch: AppDispatch = useDispatch();
 
   const onClickAdd = () => {
@@ -22,8 +30,10 @@ export const RebateBlock: React.FC<RebateBlockParams> = ({ id, imageUrl, title, 
       imageUrl,
       title,
       price,
+      count,
     };
     dispatch(addItem(item));
+    dispatch(updateTotalPrice());
   };
 
   return (

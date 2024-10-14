@@ -3,11 +3,12 @@ import styles from './MainCart.module.scss';
 
 import { useSelector } from 'react-redux';
 import { CartRight } from '../../../ui/CartRight';
+import { RootState } from '../../../../redux/store';
 
 export const MainCart: React.FC = () => {
-  const item = useSelector((state: any) => state.cart.items);
-  const cartPrice = useSelector((state: any) => state.cart.totalPrice);
-  const { items } = useSelector((state: any) => state.cart);
+  const { items, totalPrice } = useSelector((state: RootState) => state.cart);
+
+  const totalCount = Object.values(items).reduce((sum, item) => sum + item.count, 0);
 
   return (
     <>
@@ -18,11 +19,11 @@ export const MainCart: React.FC = () => {
               <h3 className={styles.main__left_title}>Итого</h3>
               <div className={styles.main__left_block}>
                 <p className={styles.main__left_products}>Количество товара</p>
-                <p className={styles.main__left_count}>{items.length}</p>
+                <p className={styles.main__left_count}>{totalCount}</p>
               </div>
               <div className={styles.main__left_block}>
                 <p className={styles.main__left_products}>Товаров на сумму</p>
-                <p className={styles.main__left_count}>{cartPrice}Р</p>
+                <p className={styles.main__left_count}>{totalPrice}Р</p>
               </div>
               <div className={styles.main__left_block}>
                 <p className={styles.main__left_products}>Поставщик</p>
@@ -87,7 +88,7 @@ export const MainCart: React.FC = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-box">
+                  className="lucide lucideBox">
                   <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
                   <path d="m3.3 7 8.7 5 8.7-5" />
                   <path d="M12 22V12" />
@@ -99,8 +100,8 @@ export const MainCart: React.FC = () => {
             </div>
           </div>
           <div className={styles.main__right}>
-            {item.map((item: any) => (
-              <CartRight key={item.id} {...item} />
+            {Object.entries(items).map(([id, item]) => (
+              <CartRight key={id} {...item} id={id} />
             ))}
           </div>
         </div>

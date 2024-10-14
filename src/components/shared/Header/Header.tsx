@@ -12,6 +12,7 @@ export const Header: React.FC = () => {
   const header = useSelector((state: any) => state.header.value);
   const dispatch = useDispatch();
   const { items } = useSelector((state: any) => state.cart);
+  const totalItems = Object.values(items).reduce((sum: number, item: any) => sum + item.count, 0);
 
   return (
     <>
@@ -102,7 +103,7 @@ export const Header: React.FC = () => {
                 </a>
               </li>
               <li className={styles.nav__main_cart}>
-                <div className={styles.nav__main_count}>{items.length}</div>
+                <div className={styles.nav__main_count}>{totalItems}</div>
                 <ShoppingCart className={styles.nav__main_svg} />
 
                 <Link to="cart" className={styles.nav__main_cart}>
