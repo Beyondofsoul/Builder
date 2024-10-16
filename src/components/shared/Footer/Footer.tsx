@@ -98,7 +98,6 @@ export const Footer: React.FC = () => {
         <div className={styles.footer__footer}>
           <p className={styles.footer__text}>© СтройкаСтор</p>
           <img src={Frame} alt="" />
-          <p className={styles.footer__text}>Cделано в KRUGLOV STUDIO</p>
         </div>
       </div>
     </div>
